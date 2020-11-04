@@ -1,0 +1,131 @@
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000000" />
+<meta
+  name="description"
+  content="Web site created using create-react-app"
+  />
+<link rel="stylesheet"
+  href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+  crossorigin="anonymous" />
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="./stylesheets/style.css" rel="stylesheet">
+<title>sQbeats</title>
+</head>
+<body>
+<div>
+  <nav class="black">
+    <div class="container nav-wrapper">
+      <a href="/" class="brand-logo">
+        ClickBeats
+      </a>
+      <a
+        data-target="nav-side"
+        href="#nav-side"
+        class="sidenav-trigger"
+      >
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="/discover">Discover</a>
+        </li>
+        <li>
+          <a href="/catagories">Catagories</a>
+        </li>
+        <li>
+          <a href="/download">Download</a>
+        </li>
+        <li>
+          <a href="/upload">Upload</a>
+        </li>
+        <li>
+          <a href="/mytracs">My Tracks</a>
+        </li>
+        <li>
+          <a href="/search">Search</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav black" id="nav-side">
+    <li>
+      <a class="white-text" href="/discover">
+        Discover
+      </a>
+    </li>
+    <li>
+      <a class="white-text">Catagories</a>
+    </li>
+    <li>
+      <a class="white-text">Download</a>
+    </li>
+    <li>
+      <a href="/upload" class="white-text">
+        Upload
+      </a>
+    </li>
+    <li>
+      <a href="/mytracs" class="white-text">
+        My Tracks
+      </a>
+    </li>
+    <li>
+      <a class="white-text">Search</a>
+    </li>
+  </ul>
+</div>
+<div class="form container">
+    <form class="upload-form">
+      <div class="input-field">
+        <label htmlFor="title">Title</label>
+        <input type="text" id="title" placeholder="" />
+      </div>
+      <div class="input-field">
+        <label htmlFor="artist">Artist</label>
+        <input type="text" id="artist" name="artist" placeholder="" />
+      </div>
+      <div class="input-field">
+        <label htmlFor=""></label>
+        <input type="text" placeholder="" />
+      </div>
+      <div class="input-field">
+        <label htmlFor=""></label>
+        <input type="text" placeholder="" />
+      </div>
+      <div class="input-field">
+        <label htmlFor=""></label>
+        <input type="text" placeholder="" />
+      </div>
+      <div class="input-field">
+        <label htmlFor="track"></label>
+        <input type="file" id="track" name="track" />
+      </div>
+
+      <div class="input-field">
+        <button
+          class="upload-btn btn btn-small grey darken-3"
+          type="submit"
+        >
+          Upload
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+</script>
+<script src='./scripts/upload.js'></script>
+</body>
+</html>
