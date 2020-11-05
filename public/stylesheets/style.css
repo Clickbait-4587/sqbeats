@@ -1,8 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+a{
+  cursor: pointer
+}
+ul.handles li a.grey-text{
+  cursor: default;
+  pointer-events: none
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Jura', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("../images/austin-neill-unsplash.jpg");
@@ -14,6 +21,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.user-nav{
+  margin-top: 40px
+}
+.download-btn{
+  margin-top: -48px;
+  margin-left: 90%
+}
+
+div.prof-pic img{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 2px solid aliceblue;
+}
+fieldset{
+  border: none;
+  border-top: 2px solid aliceblue;
+ margin-top: 40px
+}
+
+#sup, #sin{
+  border-radius: 20px;
+}
+.form-body{
+
+  background: transparent
+}
+.form{
+  margin: 20px auto 50px auto ;
+  width: 500px;
+  border: 3px solid #959697;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: transparent
+  text-align: center
+}
+
+.in, .up{
+  width: 200px;
+  height: 30px;
+
+  margin: 20px
+}
+
 
 
 .player{
@@ -54,17 +105,32 @@ transition: 1s all;
   margin-top: 30px;
   border: 2px solid rgb(63, 62, 62);
   height: 104px;
-  background: linear-gradient(to bottom, rgba(139, 137, 137,0.3),rgba(62, 63, 63,0.3));
+  background: linear-gradient(to bottom, rgba(139, 137, 137,0.7),rgba(62, 63, 63,0.7));
 }
 
 .title{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
   position: relative;
+  font-weight: bolder;
+  color: rgb(34, 34, 34);
   top: -20px;
-font-family: 'Courier New', Courier, monospace;
+}
+.desc{
+
+  width: 100%;
+}
+
+.sdesc{
+  font-size: 15px;
+  color: aliceblue
+}
+.handles{
+  margin-right: 20px;
   
 }
 
-input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=number]:focus, input[type=url]:focus, .materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid black !important;
   box-shadow: 0 1px 0 0 transparent !important;
  }
@@ -84,6 +150,13 @@ input{
   font-family: cursive !important;
   color: rgb(212, 209, 209) !important
 }
+
+::placeholder{
+  font-size: 10px;
+  font-family: monospace;
+  color: rgb(173, 171, 171);
+  opacity: 0.5;
+}
 .search-btn{
   position: relative;
   right: 40px;
@@ -92,25 +165,23 @@ input{
 form.search{
   margin-top: 70px
 }
-@media screen and (min-width: 781px){
-  .desc div{
-    position: relative;
+/*@media screen and (min-width: 781px){
 
-  }
-  .title{
+  .title, .album, .collabos{
     position: relative;
- 
   }
-}
+}*/
 .track{
   display: flex;
 }
 .form{
   margin-top: 100px;
-  margin-left: 150px
+  margin-left: 100px;
+  width: 70%;
+ 
 }
 
-.form{
+.up-form{
   width: 40%;
   margin-left: 50px;
 }
@@ -136,4 +207,37 @@ form.search{
   vertical-align: middle;
   user-select: none;
   border: 1px solid transparent;
+}
+
+.user-btns{
+ 
+  position: relative;
+ margin-top: 10px;
+  overflow: hidden;
+  display: block;
+}
+
+.su-btn{
+  position: relative;
+  float: right;
+  margin-left: 10px;
+  margin-right: 10px
+}
+.so-btn{
+  float: right;
+  margin-right: 10px
+}
+.si-btn{
+  float: right;
+}
+
+h1.form-h1{
+  font-size: 30px;
+  color: grey;
+  text-align: center;
+}
+
+.songs{
+  position: relative;
+  bottom: 30px;
 }
