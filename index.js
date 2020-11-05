@@ -1,7 +1,7 @@
 const firebase = require("firebase");
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 let users = [];
 let users2 = [];
 app.use(express.static(__dirname + "/public"));
@@ -39,6 +39,8 @@ setInterval(()=>{
         if (Object.keys(doc.data()) == "username") {
          users2=[]
           users2.push(Object.values(doc.data())[0]);
+          console.log("users")
+          console.log(users2)
           users2.forEach(val=>{
             app.get("/" + val, (req, res) => {
               res.sendFile(__dirname + "/public/profile.html");})
