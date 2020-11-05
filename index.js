@@ -36,11 +36,12 @@ try {
       });
     })
     .then(() => {
+      
       paths.push({ users: Object.values(users) });
       app.listen(port, () => console.log("Running on port " + port));
     })
     .then(() => {
-      console.log(paths);
+      console.log(paths)
       paths.forEach((path) => {
         if (Object.keys(path) == "users") {
           Object.values(path).forEach((value) => {
