@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 let users = [];
+let users2 = [];
 app.use(express.static(__dirname + "/public"));
 app.get("/", (req, res) => {
   res.sendFile("index.html");
@@ -22,43 +23,33 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const store = firebase.firestore();
 
-let paths = ["upload", "mytracs", "cart", "discover"];
-
-try {
+let paths = ["upload", "mytracks", "cart", "discover"];
+paths.forEach(path=>{
+  app.get("/" + path, (req, res) => {
+    res.sendFile(__dirname + "/public/" + path + ".html");
+  });
+})
+setInterval(()=>{
+ 
   store
     .collection("Users")
     .get()
     .then((snap) => {
       snap.docs.forEach((doc) => {
         if (Object.keys(doc.data()) == "username") {
-          users.push(Object.values(doc.data())[0]);
+         users2=[]
+          users2.push(Object.values(doc.data())[0]);
+          users2.forEach(val=>{
+            app.get("/" + val, (req, res) => {
+              res.sendFile(__dirname + "/public/profile.html");})
+          })
+          //users.push(Object.values(doc.data())[0]);
         }
       });
     })
     .then(() => {
-      
-      paths.push({ users: Object.values(users) });
-      app.listen(port, () => console.log("Running on port " + port));
-    })
-    .then(() => {
-      console.log(paths)
-      paths.forEach((path) => {
-        if (Object.keys(path) == "users") {
-          Object.values(path).forEach((value) => {
-            value.forEach((val) => {
-              app.get("/" + val, (req, res) => {
-                res.sendFile(__dirname + "/public/profile.html");
-                //res.send("jjjj");
-              });
-            });
-          });
-        } else {
-          app.get("/" + path, (req, res) => {
-            res.sendFile(__dirname + "/public/" + path + ".html");
-          });
-        }
-      });
-    });
-} catch (err) {
-  console.log(err.message);
-}
+     })
+},3000)
+app.listen(port,()=>{
+  console.log("Listening to port " + port);
+})

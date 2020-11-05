@@ -8,6 +8,11 @@ var firebaseConfig = {
   appId: "1:728507359355:web:5d2aa890d7f375176f02de",
   measurementId: "G-8EXGEF7MBT",
 };
+let ll=[]
+document.addEventListener('click',(e)=>{
+  ll.push(e.target);
+  console.log(ll)
+})
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
