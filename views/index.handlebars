@@ -1,5 +1,7 @@
-<h1>{{title}}</h1>
+{{> header}}
 
+<h1>{{title}}</h1>
+{{> error }}
 <form action="/api/members" method="post">
 <div class="input-group">
     <input type="text" name="name" placeholder="Name" id="">
@@ -11,6 +13,7 @@
     <button class="btn transparent btn-small blue">Add Member</button>
 </div>
 </form>
+<p>{{error}}</p>
 <h4>Members</h4>
 <ul>
     {{#each members}}

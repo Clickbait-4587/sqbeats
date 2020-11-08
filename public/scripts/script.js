@@ -321,6 +321,10 @@ $(document).ready(() => {
   }
 
    */
+
+  document.body.addEventListener("click", () => {
+    $("div.error").fadeOut(1000);
+  });
   $("li").addClass("white-text");
   $(".sidenav").sidenav({
     inDuration: 1000,
@@ -329,5 +333,26 @@ $(document).ready(() => {
   $(".modal").modal({
     inDuration: 1000,
     outDuration: 1000,
+  });
+});
+const suForm = document.querySelector(".su-form");
+$(".su-form").submit((e) => {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    data: {
+      username: e.target["username"].value,
+      email: e.target["email"].value,
+      password: e.target["password"].value,
+    },
+    type: "POST",
+    url: "signup",
+    success: function (res) {
+      console.log(res);
+    },
+    error: function (err) {
+      let errorTxt = JSON.parse(err.responseText).message;
+      $("h7.text-warning").text(errorTxt);
+      $("div.error").fadeIn(1000);
+    },
   });
 });

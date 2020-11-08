@@ -38,9 +38,7 @@ fieldset{
  margin-top: 40px;
  margin-right: 90px
 }
-fieldset.socials{
 
-}
 #sup, #sin{
   border-radius: 20px;
 }
@@ -78,10 +76,6 @@ input, input:focus{
   background-color: transparent !important;
 }
 
-.logged.hidden, .n-logged.hidden{
-  display: none
-}
-
 .in, .up{
   width: 30vw;
   height: 30px;
@@ -104,9 +98,6 @@ transition: 1s all;
 transform: rotate(-20deg);
   }
 
-  i.play{
-   
-  }
 #pause{
   position: relative;
   right: 50px
@@ -215,10 +206,6 @@ form.search{
  
 }
 
-.up-form{
-
- 
-}
 
 ::-webkit-file-upload-button {
   background: #8f8d8c;

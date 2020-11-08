@@ -1,6 +1,6 @@
+{{> header}}
 
-<title>Clickbeats Upload</title>
-
+{{#if user}}
 <div class="row">
 <div class="up-form container" style="margin-bottom: 100px;">
     <form class="upload-form" method="post" action="/uploads/upload">
@@ -54,8 +54,12 @@
     <input id="youtube" type="url" name="youtube" >
 </div>
 </fieldset>
-
-      <div style="margin: 0 20%;" class="input-field col l12">
+ <div class="col s12 l12 progress-bar" id="progress">
+    <div class="div progress-fill">
+      <span class="white-text bar-text">0%</span>
+    </div>
+  </div><hr>
+      <div class="input-field col l12">
         <button style="font-weight: bolder; width: 60vw"
           class="upload-btn btn btn-small grey-text transparent"
           type="submit"
@@ -65,11 +69,11 @@
       </div>
     </form>
 
-  <div class="progress-bar" id="progress">
-    <div class="div progress-fill">
-      <span class="white-text bar-text">0%</span>
-    </div>
-  </div><hr>
+ 
   </div>
 </div>
-</div>
+
+{{else}}
+  <h1 class="white-text center-align" style="font-weight: bolder;">Login/Signup to upload songs</h1>
+{{/if}}
+
