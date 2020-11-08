@@ -1,0 +1,296 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+a{
+  cursor: pointer
+}
+ul.handles li a.grey-text{
+  cursor: default;
+  pointer-events: none
+}
+body {
+  margin: 0;
+  font-family: 'Jura', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("../images/austin-neill-unsplash.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.user-nav{
+  margin-top: 40px
+}
+
+
+div.prof-pic img{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 2px solid aliceblue;
+}
+fieldset{
+  border: none;
+  border-top: 2px solid aliceblue;
+ margin-top: 40px;
+ margin-right: 90px
+}
+fieldset.socials{
+
+}
+#sup, #sin{
+  border-radius: 20px;
+}
+.form-body{
+  border: 3px solid #5d5d5e;
+  background: rgba(22, 22, 22, 0.9)
+}
+.form{
+  color: aliceblue !important;
+  margin: 20px auto 50px auto !important ;
+  width: 50vw !important;
+  border: 3px solid #656566;
+  border-bottom: none;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: transparent;
+  text-align: center;
+height: 30vh;
+}
+@media screen and  (min-width: 380px){
+  .form{
+    height: 45vh !important;
+
+  }
+}
+
+@media screen and (max-width:595px){
+
+  
+
+  
+}
+
+input, input:focus{
+  background-color: transparent !important;
+}
+
+.logged.hidden, .n-logged.hidden{
+  display: none
+}
+
+.in, .up{
+  width: 30vw;
+  height: 30px;
+border: 2px solid rgba(180, 178, 178,0.4);
+  
+}
+
+
+
+.player{
+position: relative;
+bottom: 70% !important;
+margin: 0 27% !important;
+height: 30px;
+transition: 1s all;
+}
+.player:hover{
+  position: relative;
+    transform: scale(1.08);
+transform: rotate(-20deg);
+  }
+
+  i.play{
+   
+  }
+#pause{
+  position: relative;
+  right: 50px
+}
+
+ .pause{
+  visibility: hidden;
+}
+
+
+.track-logo img{
+  
+transition: 1s all;
+height: 100%;
+}
+.track-logo img:hover{
+  opacity: 0.3;
+
+}
+.not-so-opaque{
+  opacity: 0.3;
+}
+.track{
+  height: 100px;
+  margin-top: 30px;
+  border: 2px solid rgb(63, 62, 62);
+ display: flex;
+  background: linear-gradient(to bottom, rgba(139, 137, 137,0.7),rgba(62, 63, 63,0.7));
+}
+
+.title{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 100%;
+  position: relative;
+  font-weight: bolder;
+  color: rgb(34, 34, 34);
+  
+}
+.sdesc{
+  
+  font-size: 80%;
+  color: aliceblue
+}
+.desc{
+padding-left: 3%;
+  width: 100%;
+  overflow: scroll
+}
+.desc::-webkit-scrollbar {
+  display: none;
+}
+.download-btn{
+position: absolute;
+right: 10px;
+top: 55px
+}
+.handles{
+  position: relative;
+  margin-right: 20px;
+ bottom: 10px
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=number]:focus, input[type=url]:focus, .materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid black !important;
+  box-shadow: 0 1px 0 0 transparent !important;
+ }
+input[type=search]:focus{
+ 
+  border-bottom: 1px solid rgb(136, 136, 136) !important;
+  box-shadow: 0 1px 0 0 transparent !important;
+}
+input[type=search]{
+  border: 1px solid rgb(136, 136, 136) !important;
+  border-radius: 3px !important;
+  height: 30px !important;
+  padding: 2px 6px 0 6px !important
+}
+
+input{
+  font-family: cursive !important;
+  color: rgb(212, 209, 209) !important
+}
+
+::placeholder{
+  font-size: 10px;
+  font-family: monospace;
+  color: rgb(212, 211, 211);
+  opacity: 0.5;
+}
+.search-btn{
+  position: relative;
+  right: 40px;
+ 
+}
+form.search{
+  margin-top: 70px
+}
+
+.track{
+  display: flex;
+}
+.form{
+  margin-top: 100px;
+  margin-left: 100px;
+  width: 70%;
+ 
+}
+
+.up-form{
+
+ 
+}
+
+::-webkit-file-upload-button {
+  background: #8f8d8c;
+  color: white;
+  padding: 8px 25px;
+  font-size: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-color: #FF4B2B;
+  transition: all 0.15s ease;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  line-height: 1.5;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+}
+
+.user-btns{
+ 
+  position: relative;
+ margin-top: 10px;
+  overflow: hidden;
+  display: block;
+}
+
+.su-btn{
+  position: relative;
+  float: right;
+  margin-left: 10px;
+  margin-right: 10px
+}
+.so-btn{
+  float: right;
+  margin-right: 10px
+}
+.si-btn{
+  float: right;
+}
+
+h1.form-h1{
+  font-size: 30px;
+  color: rgb(204, 200, 200);
+  text-align: center;
+}
+
+.songs{
+  position: relative;
+  bottom: 30px;
+}
+
+.progress-bar{
+  height: 25px;
+  width: 250px;
+  border: 2px solid rgb(63, 62, 62);
+margin: 50px 0 50px 0;
+display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.progress-fill{
+  height: 22px;
+  width: 0%;
+  background: rgb(80, 80, 80);
+  transition: width 0.55s;
+  font-weight: bold;
+}

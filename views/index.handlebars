@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+
+<form action="/api/members" method="post">
+<div class="input-group">
+    <input type="text" name="name" placeholder="Name" id="">
+</div>
+<div class="input-group">
+    <input type="text" name="email" placeholder="Email Address" id="">
+</div>
+<div class="input-group">
+    <button class="btn transparent btn-small blue">Add Member</button>
+</div>
+</form>
+<h4>Members</h4>
+<ul>
+    {{#each members}}
+        <li>{{this.name}}</li>
+    {{/each}}
+</ul>
