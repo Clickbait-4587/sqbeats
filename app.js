@@ -48,8 +48,8 @@ async function initApp() {
   const exphbs = require("express-handlebars");
 
   // init the engie
-  app.engine("handlebars", exphbs({extname: 'hbs'}));
-  app.set("view engine", "handlebars", );
+  app.engine("handlebars", exphbs());
+  app.set("view engine", "handlebars" );
   // Set a parser
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
