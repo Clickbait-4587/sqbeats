@@ -1,0 +1,79 @@
+{{> header}}
+
+{{#if user}}
+<div class="row">
+<div class="up-form container" style="margin-bottom: 100px;">
+    <form class="upload-form" method="post" action="/uploads/upload">
+<fieldset class="col s10 l2">
+  <legend class="flow-text white-text center">Song Details</legend>
+      <div class="input-field">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title">
+      </div>
+      <div class="input-field">
+        <label for="artist">Artist</label>
+        <input type="text" id="artist" name="artist"  />
+      </div>
+      <div class="input-field">
+        <label for="collaborators">Collaborators (<em style="font-size: 10px;">Optional</em>)</label>
+        <input type="text" name="collaborators"  id="collaborators" >
+      </div>
+      <div class="input-field">
+        <label for="album">Album</label>
+        <input id="album" type="text" name="album" >
+      </div>
+      <div class="input-field">
+        <label for="year">Year</label>
+        <input type="number" name="year" id="year" >
+      </div>
+      <div class="input-field">
+        <label for="type">Type</label>
+        <input type="text" placeholder="Beat/Instrumental or Song" name="type" id="type" />
+      </div>
+      <div class="input-field">
+        <label for="trak"></label>
+        <input type="file" id="trak" name="track">
+      </div>
+    </fieldset>
+    <fieldset class="col s10 l3">
+      <legend class="flow-text white-text center">Social Handles</legend>
+        <div class="input-field">
+          <label for="facebook">Facebook</label>
+          <input id="facebook" type="url" name="facebook" >
+      </div>
+      <div class="input-field">
+        <label for="twitter">Twitter</label>
+        <input id="twitter" type="url" name="twitter" >
+    </div>
+    <div class="input-field">
+      <label for="soundcloud">SoundCloud</label>
+      <input id="soundcloud" type="url" name="soundcloud" >
+  </div>
+  <div class="input-field">
+    <label for="youtube">Youtube</label>
+    <input id="youtube" type="url" name="youtube" >
+</div>
+</fieldset>
+ <div class="col s12 l12 progress-bar" id="progress">
+    <div class="div progress-fill">
+      <span class="white-text bar-text">0%</span>
+    </div>
+  </div><hr>
+      <div class="input-field col l12">
+        <button style="font-weight: bolder; width: 60vw"
+          class="upload-btn btn btn-small grey-text transparent"
+          type="submit"
+        >
+          Upload
+        </button>
+      </div>
+    </form>
+
+ 
+  </div>
+</div>
+
+{{else}}
+  <h1 class="white-text center-align" style="font-weight: bolder;">Login/Signup to upload songs</h1>
+{{/if}}
+

@@ -24,10 +24,7 @@ code {
 .user-nav{
   margin-top: 40px
 }
-.download-btn{
-  margin-top: -48px;
-  margin-left: 90%
-}
+
 
 div.prof-pic img{
   width: 100px;
@@ -38,40 +35,60 @@ div.prof-pic img{
 fieldset{
   border: none;
   border-top: 2px solid aliceblue;
- margin-top: 40px
+ margin-top: 40px;
+ margin-right: 90px
 }
 
 #sup, #sin{
   border-radius: 20px;
 }
 .form-body{
-
-  background: transparent
+  border: 3px solid #5d5d5e;
+  background: rgba(22, 22, 22, 0.9)
 }
 .form{
-  margin: 20px auto 50px auto ;
-  width: 500px;
-  border: 3px solid #959697;
+  color: aliceblue !important;
+  margin: 20px auto 50px auto !important ;
+  width: 50vw !important;
+  border: 3px solid #656566;
+  border-bottom: none;
   padding: 10px;
   border-radius: 8px;
-  background-color: transparent
-  text-align: center
+  background-color: transparent;
+  text-align: center;
+height: 30vh;
+}
+@media screen and  (min-width: 380px){
+  .form{
+    height: 45vh !important;
+
+  }
+}
+
+@media screen and (max-width:595px){
+
+  
+
+  
+}
+
+input, input:focus{
+  background-color: transparent !important;
 }
 
 .in, .up{
-  width: 200px;
+  width: 30vw;
   height: 30px;
-
-  margin: 20px
+border: 2px solid rgba(180, 178, 178,0.4);
+  
 }
 
 
 
 .player{
 position: relative;
-right: 73px;
-top: 30px;
-
+bottom: 70% !important;
+margin: 0 27% !important;
 height: 30px;
 transition: 1s all;
 }
@@ -80,6 +97,7 @@ transition: 1s all;
     transform: scale(1.08);
 transform: rotate(-20deg);
   }
+
 #pause{
   position: relative;
   right: 50px
@@ -91,8 +109,9 @@ transform: rotate(-20deg);
 
 
 .track-logo img{
-  width: 100px;
+  
 transition: 1s all;
+height: 100%;
 }
 .track-logo img:hover{
   opacity: 0.3;
@@ -102,32 +121,43 @@ transition: 1s all;
   opacity: 0.3;
 }
 .track{
+  height: 100px;
   margin-top: 30px;
   border: 2px solid rgb(63, 62, 62);
-  height: 104px;
+ display: flex;
   background: linear-gradient(to bottom, rgba(139, 137, 137,0.7),rgba(62, 63, 63,0.7));
 }
 
 .title{
   font-family: 'Courier New', Courier, monospace;
-  font-size: 18px;
+  font-size: 100%;
   position: relative;
   font-weight: bolder;
   color: rgb(34, 34, 34);
-  top: -20px;
+  
 }
-.desc{
-
-  width: 100%;
-}
-
 .sdesc{
-  font-size: 15px;
+  
+  font-size: 80%;
   color: aliceblue
 }
+.desc{
+padding-left: 3%;
+  width: 100%;
+  overflow: scroll
+}
+.desc::-webkit-scrollbar {
+  display: none;
+}
+.download-btn{
+position: absolute;
+right: 10px;
+top: 55px
+}
 .handles{
+  position: relative;
   margin-right: 20px;
-  
+ bottom: 10px
 }
 
 input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=number]:focus, input[type=url]:focus, .materialize-textarea:focus:not([readonly]) {
@@ -154,7 +184,7 @@ input{
 ::placeholder{
   font-size: 10px;
   font-family: monospace;
-  color: rgb(173, 171, 171);
+  color: rgb(212, 211, 211);
   opacity: 0.5;
 }
 .search-btn{
@@ -165,12 +195,7 @@ input{
 form.search{
   margin-top: 70px
 }
-/*@media screen and (min-width: 781px){
 
-  .title, .album, .collabos{
-    position: relative;
-  }
-}*/
 .track{
   display: flex;
 }
@@ -181,10 +206,6 @@ form.search{
  
 }
 
-.up-form{
-  width: 40%;
-  margin-left: 50px;
-}
 
 ::-webkit-file-upload-button {
   background: #8f8d8c;
@@ -233,11 +254,30 @@ form.search{
 
 h1.form-h1{
   font-size: 30px;
-  color: grey;
+  color: rgb(204, 200, 200);
   text-align: center;
 }
 
 .songs{
   position: relative;
   bottom: 30px;
+}
+
+.progress-bar{
+  height: 25px;
+  width: 250px;
+  border: 2px solid rgb(63, 62, 62);
+margin: 50px 0 50px 0;
+display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.progress-fill{
+  height: 22px;
+  width: 0%;
+  background: rgb(80, 80, 80);
+  transition: width 0.55s;
+  font-weight: bold;
 }

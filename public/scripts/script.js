@@ -1,3 +1,4 @@
+/*
 var firebaseConfig = {
   apiKey: "AIzaSyBX4tfQZNUHnRKopID4RrQ-akdzysggV90",
   authDomain: "sketchi-4587.firebaseapp.com",
@@ -8,17 +9,20 @@ var firebaseConfig = {
   appId: "1:728507359355:web:5d2aa890d7f375176f02de",
   measurementId: "G-8EXGEF7MBT",
 };
-let ll=[]
-document.addEventListener('click',(e)=>{
-  ll.push(e.target);
-  console.log(ll)
-})
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const store = firebase.firestore();
 const storage = firebase.storage().ref();
 auth.onAuthStateChanged((user) => {
+  if (user) {
+    $(".n-logged").addClass("hidden");
+    $(".logged").removeClass("hidden");
+  } else {
+    $(".logged").addClass("hidden");
+    $(".n-logged").removeClass("hidden");
+  }
   const uploadForm = document.querySelector(".upload-form");
   if (uploadForm) {
     uploadForm.addEventListener("submit", (e) => {
@@ -72,9 +76,8 @@ class UI {
         <div class="track">
         <div class="track-logo">
           <img src="./images/OILHK60.jpg" alt="headphones logo" />
-        </div>
-
-        <div class="player">
+        
+        <div class="player ">
           <audio src=${item.url}></audio>
 
           <div class="controls">
@@ -84,23 +87,28 @@ class UI {
             >
               <i
                 
-                class="play fa black-text  fa-play"
+                class="play transparent fa black-text  fa-play"
                 aria-hidden="true"
               ></i>
             </a>
           </div>
         </div>
+          </div>
+
         <div class="desc">
           <p class=" title left">Artist: <span class="sdesc">${item.artist} |${item.title} (${item.year})</span><br>
           Collabos: <span class="sdesc">${item.collaborators}</span><br>
           Album: <span class="sdesc">${item.album}</span>
           <br>
           </p>
-          <a class="btn z-depth-0 transparent grey-text btn-small download-btn"><i class="fas fa-download"></i></a>
-          
+         
           </div>
 
         <ul class="handles right" >
+        <li>
+        <a href="#"  class="btn z-depth-0 transparent grey-text btn-small download-btn"><i class="fas grey-text text-darken-1 fa-download"></i></a>
+          
+        </li>
         <li>
         <a target="_blank" href="https://www.facebook.com/squashetonics"><i class="fab fa-facebook"></i></a>
     </li>
@@ -131,6 +139,7 @@ class UI {
     let players = document.querySelectorAll(".play");
     players.forEach((player) => {
       player.addEventListener("click", (e) => {
+        e.target.dow
         let audio =
           e.target.parentElement.parentElement.parentElement.childNodes[1];
         if (e.target.classList.contains("fa-play")) {
@@ -208,6 +217,7 @@ $(document).ready(() => {
         UI.startApp();
       })
       .then(() => {
+        
         UI.playPause();
       })
       .then(() => {
@@ -246,66 +256,14 @@ $(document).ready(() => {
       $(".track-logo img").css("opacity", 1);
     }
   );
-  //Start App
+  //Download
+  $('.download-btn').click((e)=>{
+    console.log("e.target.parentElement")
+  })
 
   //Browsing discover
   UI.browseSongs();
-
-  ///Sign up
-
-  const signupForm = document.querySelector(".su-form");
-  document.body.addEventListener("click", () => {
-    $(".text-warning").fadeOut(1000);
-    $(".fa-exclamation-triangle").fadeOut(1000);
-  });
-  if (signupForm) {
-    signupForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const password = signupForm["password"].value;
-      const email = signupForm["email"].value;
-      const username = signupForm["username"].value;
-      auth
-        .createUserWithEmailAndPassword(email, password)
-        .then(() => {
-          auth.onAuthStateChanged((user) => {
-            user.updateProfile({
-              displayName: username,
-            });
-
-            store.collection("Users").doc(user.uid).set({
-              username: username,
-            });
-          });
-        })
-        .then(() => {
-          //window.location.href = "/";
-          signupForm.reset();
-        })
-        .catch((err) => {
-          $(".error").removeClass("hidden");
-          $(".text-warning").text(err.message);
-          $(".text-warning").hide();
-          $(".fa-exclamation-triangle").fadeIn(1000);
-          $(".text-warning").fadeIn(1000);
-        });
-    });
-  }
-  //Signin
-
-  const signinForm = document.querySelector(".si-form");
-  if (signinForm) {
-    signinForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const password = signinForm["password"].value;
-      const email = signinForm["email"].value;
-      auth.signInWithEmailAndPassword(email, password).then((cred) => {
-        signinForm.reset();
-        window.location.href = "/";
-      });
-    });
-  }
-
-  //Display User songs
+ //Display User songs
   store
     .collection("Songs")
     .get()
@@ -328,4 +286,73 @@ $(document).ready(() => {
         $(".songs").append(something);
       });
     });
+});
+*/
+
+$(document).ready(() => {
+  const uploadForm = document.querySelector(".upload-form");
+
+  /**
+   * 
+   *   if (uploadForm) {
+    const inpFile = document.querySelector("#track");
+    const fill = document.querySelector(".progress-fill");
+    const fillTxt = fill.querySelector(".bar-text");
+
+    uploadForm.addEventListener("submit", (e1) => {
+      const xhr = new XMLHttpRequest();
+      try {
+        xhr.open("POST", "/upr/uploads"), 3000;
+      } catch (err) {
+        console.log(err.message);
+      }
+
+      xhr.upload.addEventListener("progress", (e) => {
+        //console.log(e);]
+        const perc = e.lengthComputable ? (e.loaded / e.total) * 100 : 0;
+
+        fill.style.width = perc.toFixed(2) + "%";
+        fillTxt.textContent = perc.toFixed(2) + "%";
+      });
+
+      xhr.setRequestHeader("Content-Type", "multipart/form-data");
+      xhr.send(new FormData(uploadForm));
+    });
+  }
+
+   */
+
+  document.body.addEventListener("click", () => {
+    $("div.error").fadeOut(1000);
+  });
+  $("li").addClass("white-text");
+  $(".sidenav").sidenav({
+    inDuration: 1000,
+    outDuration: 1000,
+  });
+  $(".modal").modal({
+    inDuration: 1000,
+    outDuration: 1000,
+  });
+});
+const suForm = document.querySelector(".su-form");
+$(".su-form").submit((e) => {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    data: {
+      username: e.target["username"].value,
+      email: e.target["email"].value,
+      password: e.target["password"].value,
+    },
+    type: "POST",
+    url: "signup",
+    success: function (res) {
+      console.log(res);
+    },
+    error: function (err) {
+      let errorTxt = JSON.parse(err.responseText).message;
+      $("h7.text-warning").text(errorTxt);
+      $("div.error").fadeIn(1000);
+    },
+  });
 });
