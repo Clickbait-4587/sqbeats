@@ -1,8 +1,8 @@
 const port = process.env.PORT || 3000,
 path = require("path"),
-fs = require("fs"), { config } = require("process")
+fs = require("fs"),
 //Set up database connection
-,express = require("express"),
+express = require("express"),
   mongoose = require("mongoose"),
   passport = require("passport"),
   User = require("./models/user"),
