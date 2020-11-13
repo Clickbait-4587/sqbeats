@@ -1,4 +1,3 @@
-const { config } = require("process");
 const port = process.env.PORT || 3000,
 path = require("path"),
 fs = require("fs"), { config } = require("process")
