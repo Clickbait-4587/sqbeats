@@ -1,19 +1,16 @@
-const port = process.env.PORT || 3000;
-const path = require("path");
-const fs = require("fs");
 const { config } = require("process");
+const port = process.env.PORT || 3000,
+path = require("path"),
+fs = require("fs"), { config } = require("process")
 //Set up database connection
-const express = require("express"),
+,express = require("express"),
   mongoose = require("mongoose"),
   passport = require("passport"),
   User = require("./models/user"),
   LocalStrategy = require("passport-local"),
   app = express(),
-  morgan = require("morgan");
-passportLocalMongoose = require("passport-local-mongoose");
-
-const mongoURI =
-  const mongoURI =
+  morgan = require("morgan"),
+passportLocalMongoose = require("passport-local-mongoose"), mongoURI =
     "mongodb+srv://squashetonics:TPWbUdSRFfNVmnQM@cluster0.bdkny.mongodb.net/clickbeats?retryWrites=true&w=majority";
   try {
     mongoose.connect(mongoURI, {
