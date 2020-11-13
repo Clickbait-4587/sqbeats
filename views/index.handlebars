@@ -1,22 +1,16 @@
 {{> header}}
-
+<div class="b-cont container">
 <h1>{{title}}</h1>
-{{> error }}
-<form action="/api/members" method="post">
-<div class="input-group">
-    <input type="text" name="name" placeholder="Name" id="">
-</div>
-<div class="input-group">
-    <input type="text" name="email" placeholder="Email Address" id="">
-</div>
-<div class="input-group">
-    <button class="btn transparent btn-small blue">Add Member</button>
-</div>
-</form>
-<p>{{error}}</p>
-<h4>Members</h4>
-<ul>
-    {{#each members}}
-        <li>{{this.name}}</li>
+
+<h4>SONGS AVAILABLE</h4>
+
+<ol>
+    {{#each songs}}
+  <li class="white-text"> {{this.title}}
+  </li>
     {{/each}}
-</ul>
+</ol>
+
+</div>
+
+{{> footer}}
