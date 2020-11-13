@@ -1,12 +1,17 @@
-{{>header}}
-<div class="b-cont">
-<nav class="user-nav grey darken-3 black">
-    <div class="container grey darken-3 nav-wrapper">
+
+<nav class="user-nav black">
+    <div class="container nav-wrapper">
       
-      <a data-target="prof" class="center sidenav-trigger user-brand show-on-large brand-logo">
-        {{user.username}}
+      <a data-target="prof" class="sidenav-trigger user-brand show-on-large brand-logo">
+        
       </a>
-     
+      <a
+        data-target="nav-side"
+       
+        class="sidenav-trigger"
+      >
+        <i class="material-icons">menu</i>
+      </a>
       <ul class="right hide-on-med-and-down">
         <li>
           <a href="/mytracs"></a>Tracks</a>
@@ -28,7 +33,3 @@
   <ol class="right songs"></ol>
 </p>
 </div>
-</ul>
-</div>
-
-{{> footer}}

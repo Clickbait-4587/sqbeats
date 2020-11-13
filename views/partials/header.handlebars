@@ -53,17 +53,17 @@
           <form method="POST" action="/signup" class="su-form">
             <div class="form-group input-group">
               <input class="container form-control" type="text"
-                  name="username" value="squash"
+                  name="username"
                   placeholder="Username">
           </div>
               <div class="form-group input-group">
                   <input class="container form-control" type="email"
-                      name="email" value="squash@gmail.com"
+                      name="email"
                       placeholder="Email">
               </div>
               <div class="form-group input-group">
                   <input class="container form-control"
-                      type="password" value="baseline"
+                      type="password"
                       name="password"
                       placeholder="Password">
               </div>
@@ -99,39 +99,24 @@
               <a href="/discover">Discover</a>
             </li>
             <li>
-              <a href="">Catagories</a>
+              <a href="/catagories">Catagories</a>
             </li>
             <li>
              
             </li>
             <li>
-              <a href="/upload">Upload</a>
+              <a href="./upload">Upload</a>
             </li>
             <li>
               <a href="/mytracks">My Tracks</a>
             </li>
             <li>
-              <a href="">Search</a>
+              <a href="/search">Search</a>
             </li>
-            {{#if user}}
-            <li>
-          <a data-target="prof-dd" style=" font-weight: bolder;" class="dropdown-trigger show-on-large blue-text flow-text btn btn-small z-depth-0 grey  btn-floating pulse">{{init}}</a>
-        </li>
-            {{/if}}
-            
           </ul>
           
         </div>
       </nav>
-
-      <ul id="prof-dd" class="black dropdown-content">
-        <li>
-          <a href="/mytracks" class="white-text">My Tracks</a>
-        </li>
-        <li>
-          <a href="/profile" class="white-text">Profile</a>
-        </li>
-      </ul>
 
       <ul class="sidenav black" id="nav-side">
         <li>
@@ -158,9 +143,6 @@
         <li>
           <a class="white-text">Search</a>
         </li>
-        <li>
-          <a class="white-text">Profile</a>
-        </li>
       </ul>
       
     </div>
@@ -168,5 +150,3 @@
   <ul class="sidenav black" id="cart">
     <li>Item 1</li>
   </ul>
-
-        

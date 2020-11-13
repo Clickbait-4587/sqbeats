@@ -1,94 +1,16 @@
 {{> header}}
-  <div class="b-cont container">
- <ul class="collapsible">
-    <li>
-      <div class="collapsible-header"><i style="font-size: 12px;" class="fas fa-search"></i>Browse Songs</div>
-      <div class="collapsible-body">
-        <form action="/discover" method="POST" class=" sf-cont row search">
-      <input style="display: inline-block;" name="search" class="col search-bar s4" type="search" />
-      <button style="display: inline-block;"
-        class="search-btn right transparent btn btn-small z-depth-0"
+  <div class="container">
+    <form class="row search">
+      <input name="search" class="col search-bar s4" type="search" />
+      <button
+        class="search-btn transparent btn btn-small z-depth-0"
         type="submit"
       >
-        <i class="fas grey-text fa-search"></i>
+        <i class="fas fa-search"></i>
       </button>
     </form>
-        
-        </div>
-    </li>
-    
-  </ul>
-
- <div class="tracks">
-  
-    <p class="center flow-text white-text">{{str}}</p>
-{{#songs}}
-
-
-    <div class="track" data-target="timebar" >
-        <div class="track-logo">
-          <img src="./images/OILHK60.jpg" alt="headphones logo" />
-        
-        <div class="player ">
-          <audio src={{url}}></audio>
-
-          <div class="controls">
-            <a class="z-depth-0 btn btn-small transparent">
-              <i
-                
-                class="play transparent fa black-text  fa-play"
-                aria-hidden="true"
-              ></i>
-            </a>
-            
-          </div>
-        </div>
-          </div>
-
-        <div class="desc">
-          <p class=" title left">Artist: <span class="sdesc">{{this.artist}} |{{title}} ({{year}})</span><br>
-        {{#if collaborators}}
-          Collabos: <span class="sdesc">{{collaborators}}</span>
-          {{else}}
-          Collabos: <span class="sdesc">No Collaborators</span>
-          {{/if}}
-          <br>
-          Album: <span class="sdesc">{{album}}</span>
-          <br>
-          </p>
-
-
-          <div id="timebar" class="timebar-cont">
-         <div class="timebar">
-     <div class="timer">
-            <div class="r-t"></div>
-            </div>
-            </div>
-            </div>
-          </div>
-
-        <ul class="handles right" >
-        <li>
-        <a href="#"  class="btn z-depth-0 transparent grey-text btn-small download-btn"><i class="fas grey-text text-darken-1 fa-download"></i></a>
-          
-        </li>
-        <li>
-        <a target="_blank" href={{facebook}}><i class="fab fa-facebook"></i></a>
-    </li>
-    <li>
-      <a target="_blank" href={{twitter}}><i class="fab fa-twitter"></i></a>
-  </li>
-  <li>
-      <a target="_blank" href={{soundcloud}}><i class="fab fa-soundcloud"></i></a>
-  </li>
-  <li>
-      <a target="_blank" href={{youtube}}><i class="fab fa-youtube"></i></a>
-  </li>
-        </ul>
-        
-      </div>
-      {{/songs}}
-     
+    <div class="tracks"></div>
+    <button class="btn more transparent btn-small z-depth-0">
+      More
+    </button>
   </div>
-</div>
-{{> footer}}
