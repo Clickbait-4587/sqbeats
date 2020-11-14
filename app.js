@@ -75,13 +75,13 @@ passportLocalMongoose = require("passport-local-mongoose"), mongoURI =
   }, 1000);
 
   app.get("/", (req, res) => {
-   
 let user = req.user? JSON.stringify(req.user) : ''
     res.render("index", {
       heading: "Clickbeats",
       title: 'Clickbeats',
       user: req.user?  JSON.parse(user) :'',
-      songs: JSON.parse(songs),
+      songs: JSON.parse(songs), 
+     
       init: req.user? req.user.username[0] : '',
     });
   });

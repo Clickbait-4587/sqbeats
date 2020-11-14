@@ -1,0 +1,42 @@
+{{>header}}
+
+<div class="b-cont">
+         <div id="sup" class="form-body container">
+      <div class="form container">
+          <h1 class="form-h1">Sign Up</h1>
+          <div class="hidden error">
+              <i class="fas fa-exclamation-triangle"></i>
+              <h7 class="text-warning"></h7>
+          </div>
+    
+          <form method="POST" action="/signup" class="su-form">
+            <div class="form-group input-group">
+              <input class="container form-control" type="text"
+                  name="username" value="squash"
+                  placeholder="Username">
+          </div>
+              <div class="form-group input-group">
+                  <input class="container form-control" type="email"
+                      name="email" value="squash@gmail.com"
+                      placeholder="Email">
+              </div>
+              <div class="form-group input-group">
+                  <input class="container form-control"
+                      type="password" value="baseline"
+                      name="password"
+                      placeholder="Password">
+              </div>
+              <div class="form-group input-group">
+                  <button type="submit" class="btn z-depth-0 grey-text
+                      up btn-small text-lighten-2 transparent" value="">Sign Up</button>
+              </div>
+    
+          </form>
+    
+    
+      </div>
+    
+
+</div></div>
+
+{{>footer}}

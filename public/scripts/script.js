@@ -1,6 +1,10 @@
 
 
 $(document).ready(() => {
+  window.onresize = ()=>{ 
+    console.log('screen ' + window.innerWidth)
+    console.log($('.buy-down').width());
+  } 
 //Upload progress bar
 const uploadForm = document.querySelector(".upload-form");
 
@@ -38,6 +42,7 @@ const uploadForm = document.querySelector(".upload-form");
     inDuration: 1000,
     outDuration: 1000,
   });
+
   $('.collapsible').collapsible()
   $('.track').hover((e)=>{
 $(e.target).find('.timebar-cont').css({
@@ -189,5 +194,21 @@ if (icons) {
   });
 }
 
-
+//Playing audio from the index
+$('.ind-play i').click((e)=>{
+  let icon = $(e.target) 
+  let aud = $(e.target).parents('.player').find('audio')
+ aud = aud[0]
+ aud.paused ? console.log('paused') : console.log('not paused')
+  if (icon.hasClass('fa-play') || aud.paused){
+    icon.removeClass('fa-play');
+    icon.addClass('fa-pause');
+    aud.play()
+  } 
+  else{
+    icon.addClass('fa-play');
+    icon.removeClass('fa-pause')
+    aud.pause()
+  } 
+})
 });

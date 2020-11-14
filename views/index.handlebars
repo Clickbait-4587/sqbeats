@@ -1,16 +1,97 @@
 {{> header}}
-<div class="b-cont container">
-<h1>{{title}}</h1>
+<div class="b-cont  parallax-container">
+  <div style="background: rgba(36, 35, 35, 0.6); padding: 20px" class="section parallax">
+      <h1 style="font-size: 40px;" class=" grey-text text-darken-2 center">
+    Purchase and Sell Your Music Globally!
+  </h1>
+  <h5 class="center grey-text text-darken-2">Let the world hear your story!</h5>
+  </div>
 
-<h4>SONGS AVAILABLE</h4>
+<div  style="padding-top: 100px;" class="row">
+ <div class="assoc col s4 container l3" style="">
+   <ul class="container">
+     <li><a href="" class="white-text" style="line-height: 80px;">Producers</a></li>
+          <li><a href="" class="white-text"  style="line-height: 80px;">Developers</a></li>
+     <li><a href="" class="white-text"  style="line-height: 80px;">Wanna Collaborate?</a></li>
 
-<ol>
-    {{#each songs}}
-  <li class="white-text"> {{this.title}}
-  </li>
-    {{/each}}
-</ol>
+   </ul>
+ </div>
+ <div style="display: inline-block" class="col s8 products-dom">
+    <h1 class="center" style="color: aliceblue; border-bottom: 1px solid grey">Available</h1>
+{{#songs}}
+<div class="products">
+    <div class="product row">
+       <div style="" class="col l2 track-logo">
+          <img src="./images/OILHK60.jpg" alt="headphones logo" />
+         </div>
+          <div class="player left"> <audio src={{url}}></audio>
+          <a class="ind-play z-depth-0 grey darken-2 btn btn-small btn-floating"><i class="fas fa-play"></i></a>
+          </div>
+          <div style="  position: relative; " class="desc col l3 s6">
+            <p class="flow-tex">{{artist}} | {{title}} {{#if collaborators}} ft {{collaborators}}{{/if}}</p>
+            <p style="margin-top: -10px;margin-bottom: -1px;" class="flow-tex grey-text text-darken-1">Trap</p>
+            <span>
+              <a href="">
+                <i class="fal grey-text fa-info-circle"></i>
+              </a>
+            </span>
+            {{#if facebook}}
+          
+            <span class="icons">
 
+              <a href={{facebook}} target="_blank">
+                <i class="fab blue-text text-lighten-4 fa-facebook"></i>
+              </a>
+            </span >{{/if}}
+            {{#if twitter}}
+          
+            <span>
+              <a href={{twitter}} target="_blank">
+                <i class="fab blue-text text-lighten-4 fa-twitter"></i>
+              </a>
+            </span>{{/if}}
+            {{#if linkedin}}
+          
+            <span class="icons">
+              <a href={{linkedin}} target="_blank">
+                <i class="fab blue-text text-lighten-5 fa-linkedin"></i>
+              </a>
+            </span>{{/if}}
+            {{#if youtube}}
+            <span class="icons">
+              <a href={{youtube}} target="_blank">
+                <i class="fab red-text text-lighten-5 fa-youtube"></i>
+              </a>
+            </span>{{/if}}
+            {{#if soundcloud}}
+            <span class="icons">
+              <a href={{soundcloud}} target="_blank">
+                <i class="fab orange-text text-lighten-5 fa-soundcloud"></i>
+              </a>
+            </span>{{/if}}
+          </div>
+          <div style="position: relative;" class="spliters desc col l4 s12">
+            <p class="flow-tex" style="display: inline-block;">Tags: </p> 
+            <p class="flow-te grey-text" style="display: inline-block;">#Trap</p>
+            <p class="flow-te grey-text" style="display: inline-block;">#Oh boy</p>
+            <p class="flow-te grey-text" style="display: inline-block;">#Squash</p>
+          </div>
+<div class="spliters buy-down right col l3 s6">
+                    
+        <a href="#" style="display: inline-block;"  class="btn z-depth-0 transparent grey-text btn-small flow-tex"><i class="fas grey-text text-darken-1 fa-download"></i></a>
+        
+        <a href="#" style=" display:inline-block; margin-left:30px"  class="btn z-depth-0 transparent darken-3 flow-tex white-text btn-small"><i class="fal green-text text-darken-1 fa-cart-plus"></i><span class="b4">4.49</span></a>
+  
+          </div>
+  
+    </div>
+    </div>
+{{/songs}}
+
+  </div>
+  
+         
+</div>
 </div>
 
 {{> footer}}

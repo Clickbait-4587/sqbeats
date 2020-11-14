@@ -50,7 +50,7 @@ db.once("open", function () {
       }
       let data = req.user.username
         ? {
-            title: req.body.artist + "-" + req.body.title,
+            title: req.body.title,
             uplBy: req.user.username,
             artist: req.body.artist,
             collaborators: typeof req.body.collaborators == 'string' ? req.body.collaborators: 'No Collaborators.',
@@ -62,7 +62,7 @@ db.once("open", function () {
             soundcloud: req.body.soundcloud,
             youtube: req.body.youtube,
             type: req.body.type,
-          }
+          } 
         : {};
 
       //-----------------------------
